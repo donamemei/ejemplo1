@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LECSEMAP - Lectura de Medidores de Agua</title>
+    <style>
+        div{
+            color:white;
+        }
+        h1{
+            font-size: 80px;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('lecsempa.jpg'); /* Ruta de tu imagen de fondo */
+            background-size: cover; /* Ajusta el tamaño de la imagen para que cubra toda la página */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+        }
+
+        header {
+            background-color: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #023e8a;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #90e0ef;
+        }
+
+        /* Estilo para las secciones */
+        .section {
+            opacity: 0;
+            transition: opacity 1s ease;
+            visibility: hidden;
+            padding: 20px;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .active {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+        }
+
+        footer {
+            background-color: #023e8a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .social-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #090108;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-buttons a:hover {
+            background-color: #90e0ef;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            position: relative;
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+        }
+
+        .team-member:hover img {
+            opacity: 0.6;
+        }
+
+        .team-member button {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #023e8a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            cursor: pointer;
+        }
+
+        .team-member:hover button {
+            opacity: 1;
+        }
+
+        /* Estilo para los botones */
+        .btn {
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #90e0ef;
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LECSEMAP</h1>
+        <p>Lectura de Medidores de Agua</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a onclick="showSection('inicio')">Inicio</a></li>
+            <li><a onclick="showSection('empleados')">Empleados</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Inicio -->
+    <div id="inicio" class="section active"  >
+        <img src="" alt="">
+        <h2>Bienvenido a LECSEMAP</h2>
+        <p>Somos una microempresa dedicada a la lectura precisa y eficiente de medidores de agua.</p>
+        <p>Contamos con un equipo profesional y tecnologías avanzadas para asegurar que nuestros servicios sean confiables y exactos.</p>
+        <h3>Servicios</h3>
+        <ul>
+            <li>Lectura de medidores de agua para comunidades y empresas.</li>
+            <li>Monitoreo y control remoto de consumos.</li>
+            <li>Gestión de reportes y estadísticas en tiempo real.</li>
+        </ul>
+
+        <h3>Conéctate con nosotros:</h3>
+        <div class="social-buttons">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://tiktok.com" target="_blank">TikTok</a>
+            <a href="https://wa.me/+123456789" target="_blank">WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Sección de Empleados -->
+    <div id="empleados" class="section">
+        <h2>Nuestro Equipo</h2>
+        <div class="team-container">
+            <!-- Miembro del equipo 1 -->
+            <div class="team-member">
+                <img src="payaso.jpg" alt="Empleado 1">
+                <button class="btn">Ver Perfil</button>
+            </div>
+            <!-- Miembro del equipo 2 -->
+            <div class="team-member">
+                <img src="darwin.jpg" alt="Empleado 2">
+                <button class="btn">Ver Perfil</button>
+            </div>
+            <!-- Miembro del equipo 3 -->
+            <div class="team-member">
+                <img src="harry.jpg" alt="Empleado 3">
+                <button class="btn">Ver Perfil</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 LECSEMAP - Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Ocultar todas las secciones
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            // Mostrar la sección seleccionada con efecto de desvanecimiento
+            var sectionToShow = document.getElementById(sectionId);
+            sectionToShow.classList.add('active');
+        }
+    </script>
+</body>
+</html>
